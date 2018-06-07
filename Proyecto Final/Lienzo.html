@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop - Leccion 1: Creacion del canvas y dibujar</title>
+    <style>* { padding: 0; margin: 0; } canvas { background: #eee; display: block; margin: 0 auto; }</style>
+</head>
+<body>
+
+<!--Elemento canvas que podemos hacer referencia a el en cualquier momento.-->
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<!--Codigo javascript en el cual controlaremos   -->
+<script>
+
+/*Estamos guardando una referencia al elemento <canvas> en la variable canvas. 
+Después estamos creando la variable ctx para guardar el contexto de gráficos 2D, 
+que es la herramienta  que realmente utilizaremos para dibujar.*/
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+	
+/*Entre el metodo beginPath y closePath sera donde incluiremos el codigo necesario para crear el rectangulo rojo. */
+    ctx.beginPath();
+    ctx.rect(20, 40, 50, 50);
+    ctx.fillStyle = "#FF0000";
+    ctx.fill();
+    ctx.closePath();
+	
+/*Entre el metodo beginPath y closePath sera donde incluiremos el codigo necesario para crear el circulo verde.*/	
+    ctx.beginPath();
+    ctx.arc(240, 160, 20, 0, Math.PI*2, false);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.closePath();
+/*Rectangulo azul que colo tiene el contorno. */
+    ctx.beginPath();
+    ctx.rect(160, 10, 100, 40);
+    ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+    ctx.stroke();
+    ctx.closePath();
+</script>
+
+</body>
+</html>
